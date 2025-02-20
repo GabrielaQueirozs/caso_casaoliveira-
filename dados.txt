@@ -1,0 +1,75 @@
+/*DML -> Data Manipulation Language
+CROUD - > C ->Create(insert)
+		R -> Read | Retriaver(ler|capturar) Select
+        U -> Update(atualizar)
+        D -> Delete(apagar)
+  */
+  
+  -- selecioanar o banco de dados
+  USE dbcasaoliveira
+
+-- inserir um novo contato de um cliente
+-- descrever a tabela para ver os campos 
+desc contato;
+
+INSERT INTO contato(telefone_residencial,telefone_comercial,
+telefone_celular,email)
+VALUES(
+"",
+"11-35612856",
+"11-965232975",
+"italac@italac.com.br");
+-- selecioanr *(todas as colunas) FROM(origem)
+SELECT * FROM contato
+--------------------------------------------------------------------------
+-- descrever a tabela endereço
+desc endereco;
+
+select * FROM endereco;
+INSERT INTO endereco(
+tipo_logradouro,logradouro,
+numero, complemento,
+cep, bairro, cidade, estado
+)
+VALUES (
+"RUA", "Ministro Jesuino Cardoso", "454", "",
+"04544-051","Vila Olimpia", "São Paulo", "SP");
+-------------------------------------------------------------------
+
+select * FROM cliente;
+desc cliente;
+INSERT INTO cliente(
+nome_cliente,cpf_cliente,data_nascimento_cliente,
+contato,endereco)
+VALUES(
+"Valeria Torres de Oliveira","355.286.448-12","1986-10-05",
+1,1);
+--------------------------------------------------------------
+
+desc fornecedor;
+insert into fornecedor(razao_social,nome_fantasia,cnpj,contato,endereco)
+values( "Goiasminas industrias de laticinios ltda", "italac", "01.257.995/00001-33",2, 2);
+select * from fornecedor;
+----------------------------------------------------------
+
+desc categoria;
+insert into categoria(nome_categoria,descricao_categoria )
+values("laticinios","produtos derivados de leite");
+select * from categoria;
+
+--------------------------------------------------
+desc produto;
+insert into produto( nome_produto, preco ,data_validade,data_fabricacao,fornecedor,categoria)
+values ("leite integral", 6.50,
+"2025-03-10", "2025-01-09", 1,1);
+select * from produto;
+------------------------------------------------------
+desc estoque;
+insert into estoque(produto,quantidade_estoque,data_aquisicao)
+values(1,30,"2025-01-20");
+select * from estoque;
+
+
+
+
+
